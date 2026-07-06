@@ -1,0 +1,121 @@
+@import "tailwindcss";
+@import "./styles/tokens.css";
+@source "../src";
+@source inline("truncate font-normal leading-tight leading-normal text-text-link line-clamp-2 will-change-transform group-hover:scale-105 group-hover:text-purple-8 transition-colors duration-150 pb-3 justify-center overflow-y-auto tracking-wider border-r shrink-0 overflow-hidden fill-current tabular-nums accent-purple-9 leading-snug bg-red/90 pointer-events-none");
+
+@theme {
+  /* ── Aspect ratios ── */
+  --aspect-stream:   var(--ds-aspect-ratio-stream);   /* 16/9 */
+  --aspect-category: var(--ds-aspect-ratio-category); /* 3/4  */
+  --aspect-avatar:   var(--ds-aspect-ratio-avatar);   /* 1/1  */
+
+  /* ── Spacing: Twitch 2px grid (p-4 = 0.8rem = 8px) ── */
+  --spacing: 0.2rem;
+
+  /* ── Font families ── */
+  --font-sans: var(--ds-typography-font-base);
+  --font-mono: var(--ds-typography-font-mono);
+
+  /* ── Font sizes (rem relative to html 62.5% = 10px base) ── */
+  --text-xs:   var(--ds-typography-size-xs);   /* 10px */
+  --text-sm:   var(--ds-typography-size-sm);   /* 12px */
+  --text-base: var(--ds-typography-size-base); /* 13px — Twitch body */
+  --text-md:   var(--ds-typography-size-md);   /* 14px */
+  --text-lg:   var(--ds-typography-size-lg);   /* 16px */
+  --text-xl:   var(--ds-typography-size-xl);   /* 18px */
+  --text-2xl:  var(--ds-typography-size-2xl);  /* 20px */
+  --text-3xl:  var(--ds-typography-size-3xl);  /* 24px */
+  --text-4xl:  var(--ds-typography-size-4xl);  /* 28px */
+  --text-5xl:  var(--ds-typography-size-5xl);  /* 32px — Title */
+
+  /* ── Border radii ── */
+  --radius-none: var(--ds-border-radius-none);
+  --radius-sm:   var(--ds-border-radius-small);
+  --radius-md:   var(--ds-border-radius-medium);
+  --radius-lg:   var(--ds-border-radius-large);
+  --radius-xl:   var(--ds-border-radius-x-large);
+  --radius-2xl:  var(--ds-border-radius-xx-large);
+  --radius-full: var(--ds-border-radius-rounded);
+
+  /* ── Shadows ── */
+  --shadow-sm:   var(--ds-shadow-sm);
+  --shadow-md:   var(--ds-shadow-base);
+  --shadow-lg:   var(--ds-shadow-lg);
+  --shadow-glow: var(--ds-shadow-glow);
+
+  /* ── Colors: Twitch purple ramp ── */
+  --color-purple-1:  var(--ds-color-twitch-purple-1);
+  --color-purple-2:  var(--ds-color-twitch-purple-2);
+  --color-purple-3:  var(--ds-color-twitch-purple-3);
+  --color-purple-4:  var(--ds-color-twitch-purple-4);
+  --color-purple-5:  var(--ds-color-twitch-purple-5);
+  --color-purple-6:  var(--ds-color-twitch-purple-6);
+  --color-purple-7:  var(--ds-color-twitch-purple-7);
+  --color-purple-8:  var(--ds-color-twitch-purple-8);
+  --color-purple-9:  var(--ds-color-twitch-purple-9);
+  --color-purple-10: var(--ds-color-twitch-purple-10);
+  --color-purple-11: var(--ds-color-twitch-purple-11);
+  --color-purple-12: var(--ds-color-twitch-purple-12);
+  --color-purple-13: var(--ds-color-twitch-purple-13);
+  --color-purple-14: var(--ds-color-twitch-purple-14);
+  --color-purple-15: var(--ds-color-twitch-purple-15);
+
+  /* ── Colors: Hinted grey ramp ── */
+  --color-grey-1:  var(--ds-color-hinted-grey-1);
+  --color-grey-2:  var(--ds-color-hinted-grey-2);
+  --color-grey-3:  var(--ds-color-hinted-grey-3);
+  --color-grey-4:  var(--ds-color-hinted-grey-4);
+  --color-grey-5:  var(--ds-color-hinted-grey-5);
+  --color-grey-6:  var(--ds-color-hinted-grey-6);
+  --color-grey-7:  var(--ds-color-hinted-grey-7);
+  --color-grey-8:  var(--ds-color-hinted-grey-8);
+  --color-grey-9:  var(--ds-color-hinted-grey-9);
+  --color-grey-10: var(--ds-color-hinted-grey-10);
+  --color-grey-11: var(--ds-color-hinted-grey-11);
+  --color-grey-12: var(--ds-color-hinted-grey-12);
+  --color-grey-13: var(--ds-color-hinted-grey-13);
+  --color-grey-14: var(--ds-color-hinted-grey-14);
+  --color-grey-15: var(--ds-color-hinted-grey-15);
+
+  /* ── Colors: Brand & utility ── */
+  --color-brand:      var(--ds-color-brand-purple);
+  --color-red:        var(--ds-color-red-base);
+  --color-red-dark:   var(--ds-color-red-darker);
+  --color-green:      var(--ds-color-green-darker);
+  --color-orange:     var(--ds-color-orange-12);
+  --color-prime-blue: var(--ds-color-prime-blue);
+  --color-magenta:    var(--ds-color-magenta);
+
+  /* ── Colors: Semantic (dark default; .light overrides via tokens.css) ── */
+  --color-background-body:        var(--ds-color-background-body);
+  --color-background-base:        var(--ds-color-background-base);
+  --color-background-alt:         var(--ds-color-background-alt);
+  --color-background-alt-2:       var(--ds-color-background-alt-2);
+  --color-background-float:       var(--ds-color-background-float);
+  --color-background-accent:      var(--ds-color-background-accent);
+  --color-background-accent-alt:  var(--ds-color-background-accent-alt);
+  --color-background-live:        var(--ds-color-background-live);
+  --color-background-placeholder: var(--ds-color-background-placeholder);
+  --color-border-base:            var(--ds-color-border-base);
+  --color-border-region:          var(--ds-color-border-region);
+  --color-text-base:              var(--ds-color-text-base);
+  --color-text-alt:               var(--ds-color-text-alt);
+  --color-text-alt-2:             var(--ds-color-text-alt-2);
+  --color-text-link:              var(--ds-color-text-link);
+  --color-text-link-hover:        var(--ds-color-text-link-hover);
+}
+
+/* ── Base styles ── */
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+  background-color: var(--ds-color-background-body);
+  color: var(--ds-color-text-base);
+  font-family: var(--ds-typography-font-base);
+  font-size: var(--ds-typography-size-base);
+  line-height: var(--ds-typography-line-height-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

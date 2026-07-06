@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Claude_Preview__preview_screenshot",
+      "mcp__plugin_figma_figma__get_screenshot",
+      "mcp__plugin_figma_figma__search_design_system"
+    ]
+  }
+}
